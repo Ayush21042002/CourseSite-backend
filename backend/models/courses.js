@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const campSchema = mongoose.Schema({
+const courseSchema = mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   rating: { type: Number, required: true },
@@ -10,4 +10,4 @@ const campSchema = mongoose.Schema({
 });
 
 //model camp is created.
-module.exports = mongoose.model("Camp", campSchema);
+module.exports = mongoose.model("Course", courseSchema);

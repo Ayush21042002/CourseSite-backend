@@ -1,10 +1,10 @@
-const Camp = require('../models/camps');
+const Course = require('../models/courses');
 
-exports.createCamp = (req, res, next) => {
+exports.createCourse = (req, res, next) => {
     //construct a url to server.
     const url = req.protocol + "://" + req.get('host');
     console.log("hello");
-    const camp = new Camp({
+    const course = new Course({
         title: req.body.title,
         description: req.body.description,
         rating: Number(req.body.rating),
@@ -13,26 +13,26 @@ exports.createCamp = (req, res, next) => {
         url: req.body.url,
     });
     console.log('done');
-    camp.save()
-        .then((createdCamp) => {
+    course.save()
+        .then((createdCourse) => {
             res.status(201).json({
                 message: 'added succesfully',
-                camp: {
-                    id: createdCamp._id,
+                course: {
+                    id: createdCourse._id,
                     //...createdPost
                     //or ca use 
-                    title: createdCamp.title,
-                    description: createdCamp.description,
-                    imagePath: createdCamp.imagePath,
-                    rating: createdCamp.rating,
-                    field: createdCamp.field,  
-                    url: createdCamp.url,        
+                    title: createdCourse.title,
+                    description: createdCourse.description,
+                    imagePath: createdCourse.imagePath,
+                    rating: createdCourse.rating,
+                    field: createdCourse.field,  
+                    url: createdCourse.url,        
                 }
             });
         })
         .catch(err => {
             res.status(417).json({
-                message: "Camp not Added!! Some error occured!!"
+                message: "Course not Added!! Some error occured!!"
             })
         })
 }

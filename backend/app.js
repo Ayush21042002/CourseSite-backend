@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 
 //this returns us an express app and wnow we can use it .
 const app = express();
-const campRoutes = require('./routes/camps');
+const courseRoutes = require('./routes/courses');
 const adminRoutes = require('./routes/admin');
 mongoose.connect("mongodb+srv://ayush:aUny25mqfjS2Eo3n@cluster0.osd6c.mongodb.net/campsite?retryWrites=true&w=majority")
     .then(() => {
@@ -33,6 +33,6 @@ app.use((req, res, next) => {
 
 //1s1N23MiycqxJwDT
 
-app.use("/api/camps", campRoutes);
+app.use("/api/courses", courseRoutes);
 app.use("/api/admin",adminRoutes);
 module.exports = app;

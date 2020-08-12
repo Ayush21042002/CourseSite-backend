@@ -1,8 +1,8 @@
-const Camp = require('../models/camps');
+const Course = require('../models/courses');
 
-exports.deleteCamp = (req, res) => {
+exports.deleteCourse = (req, res) => {
     //console.log(req.userData.userId)
-    Camp.deleteOne({ _id: req.params.id})
+    Course.deleteOne({ _id: req.params.id})
         .then(result => {
 
             if (result.n === 0) {
