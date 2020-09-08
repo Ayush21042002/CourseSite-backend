@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 //from mongoose model
 
-// aUny25mqfjS2Eo3n
 
 const mongoose = require('mongoose');
 
@@ -31,7 +30,6 @@ app.use((req, res, next) => {
     next();
 })
 
-//1s1N23MiycqxJwDT
 
 app.use("/api/courses", courseRoutes);
 app.use("/api/admin",adminRoutes);
